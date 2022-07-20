@@ -1,7 +1,7 @@
 import logging, sys, os
 sys.path.append(os.path.abspath(".."))
 
-TAG_KEY = "TAG"
+TAG_KEY = "tag"
 
 def get(prim_conf):
     """ Get target API and return it """
