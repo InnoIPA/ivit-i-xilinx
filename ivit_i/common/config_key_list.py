@@ -22,3 +22,10 @@ IMAGE_OUT_DIR   = 'IMAGE_OUT_DIR'
 LABEL_CLASSES   = 'LABEL_CLASSES'
 XMODELS_CLASS   = 'XMODELS_CLASS'
 XMODELS_OBJ     = 'XMODELS_OBJ'
+
+TAG         = "tag"
+FRAMEWORK   = "framework"
+MODEL_PATH  = "model_path"
+LABEL_PATH  = "label_path"
+INPUT_SIZE  = "input_size"
+TYPE        = "type"
