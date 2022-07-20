@@ -1,0 +1,17 @@
+# META DATA
+data
+
+# MODEL
+**/*.xmodel
+
+# Cache
+**/__pycache__
+**/*.pyc
+
+# Log
+**/*.log
+
+
+
+
+
