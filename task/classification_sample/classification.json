@@ -1,0 +1,18 @@
+{
+    "TAG": "cls",
+    "FRAMEWORK": "vitis-ai",
+    "MODLES": {
+        "XMODELS_CLASS": {
+            "TYPE": "cnn",
+            "MODEL": "models/cnn/customcnn.xmodel",
+            "CLASS": [
+                "dog",
+                "cat"
+            ],
+            "INPUT_SIZE": [
+                250,
+                200
+            ]
+        }
+    }
+}
