@@ -24,7 +24,6 @@ class Draw:
     def draw_detections(self, info, palette, conf):
 
         frame = info['frame']
-        output_resolution = info['output_resolution']
         if 'cls' in conf['tag']:
             frame_ret = self.draw_cls(frame, info, palette)
         elif 'obj' in conf['tag']:
@@ -47,7 +46,7 @@ class Draw:
             if det:
                 class_id = det['id']
                 class_name = det['label']
-                class_score = det['score']
+                class_score = det['score'] if det['score']!=None else "None"
                 content = '{} {:.1%}'.format(class_name, class_score)
                 # --------------------------------------------------------
                 (t_width, t_height) = get_text_size(content)
