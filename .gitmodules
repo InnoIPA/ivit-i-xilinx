@@ -2,3 +2,7 @@
 	path = ivit-i-web-api
 	url = https://github.com/InnoIPA/ivit-i-web-api
 	branch = master
+[submodule "ivit_i/web"]
+	path = ivit_i/web
+	url = https://github.com/InnoIPA/ivit-i-web-api
+	branch = master
