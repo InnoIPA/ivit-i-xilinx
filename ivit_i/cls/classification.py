@@ -88,15 +88,15 @@ class Classification(IVIT_MODEL):
         temp_pattern        = self.get_dets_pattern()
         temp_pattern[ID]    = np.argmax(self.x.outputs[0][0])
         temp_pattern[LABEL] = self.classes[temp_pattern[ID]]
-
+        
         # Update info
         info[DETECTION].append(temp_pattern)
         logging.info(temp_pattern)
-
+        
         # Calculate During Time and Throughput
         time_end = time.time()
         time_total = time_end - time_start
         fps = 1 / time_total
         logging.info("Throughput = {:.2f} fps, time = {:.4f} seconds".format(fps, time_total))
-    
+
         return info
