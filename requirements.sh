@@ -1,5 +1,5 @@
 # Utility
-pip3 install gdown wget colorlog
+pip3 install gdown wget colorlog GPUtils
 
 # Pycocotools
 sudo dnf install python3-matplotlib
