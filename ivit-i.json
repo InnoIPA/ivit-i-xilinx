@@ -1,0 +1,16 @@
+{
+    "PROJECT": "ivit-i",
+    "VERSION": "v0.4",
+    "PLATFORM": "xilinx",
+    "FRAMEWORK": "vitis-ai",
+    "AF": "vitis-ai",
+    "HOST": "",
+    "PORT": 820,
+    "LOGGER": "ivit-i-web.log",
+    "TASK_ROOT": "./task",
+    "TEMP_PATH": "./temp",
+    "DATA": "data",
+    "DEBUG": false,
+    "WORKER": 1,
+    "THREADING": 30
+}   
