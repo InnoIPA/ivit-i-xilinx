@@ -87,7 +87,8 @@ def main(args):
             info = trg.inference(frame)
 
             if not has_app:
-                draw_frame = draw.draw_detections(draw_frame, info, palette, total_conf)
+                info["frame"]=draw_frame
+                draw_frame = draw.draw_detections(info, palette, total_conf)
             else:
                 draw_frame = application(draw_frame, info)
 
