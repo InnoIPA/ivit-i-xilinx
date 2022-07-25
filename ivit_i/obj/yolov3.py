@@ -17,6 +17,7 @@ from ivit_i.utils.err_handler import handle_exception
 # Define Config Key
 TAG         = "tag"
 FRAMEWORK   = "framework"
+TRG         = "vitis-ai"
 MODEL_PATH  = "model_path"
 LABEL_PATH  = "label_path"
 INPUT_SIZE  = "input_size"
@@ -224,16 +225,16 @@ class YOLOv3(IVIT_MODEL):
         """
         
         # Get information from config
-        self.model_path = self.cfg[MODEL_PATH]
-        self.classes = load_txt(self.cfg[LABEL_PATH])
-        self.input_size = tuple(map(int, self.cfg[INPUT_SIZE].split(",")))[1:]        
+        self.model_path = self.cfg[TRG][MODEL_PATH]
+        self.classes = load_txt(self.cfg[TRG][LABEL_PATH])
+        self.input_size = tuple(map(int, self.cfg[TRG][INPUT_SIZE].split(",")))[1:]        
         self.classed_num = len(self.classes)
 
-        self.iou = float(self.cfg[IOU])
-        self.nms = float(self.cfg[NMS])
-        self.thres = float(self.cfg[THRES])
-        self.box_max_num = int(self.cfg[BOX_MAX_NUM])
-        raw_anchors = self.cfg[ANCHORS]
+        self.iou = float(self.cfg[TRG][IOU])
+        self.nms = float(self.cfg[TRG][NMS])
+        self.thres = float(self.cfg[TRG][THRES])
+        self.box_max_num = int(self.cfg[TRG][BOX_MAX_NUM])
+        raw_anchors = self.cfg[TRG][ANCHORS]
 
         # Set anchors
         rows, cols = int(len(raw_anchors) / 2), 2

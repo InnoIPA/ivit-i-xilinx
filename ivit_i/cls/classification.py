@@ -9,6 +9,7 @@ from ivit_i.utils.err_handler import handle_exception
 # Define Key
 TAG         = "tag"
 FRAMEWORK   = "framework"
+TRG         = "vitis-ai"
 MODEL_PATH  = "model_path"
 LABEL_PATH  = "label_path"
 INPUT_SIZE  = "input_size"
@@ -41,9 +42,9 @@ class Classification(IVIT_MODEL):
             - a bool value, which means is initialize successfuly or not.
         """
         # Parse Information From Config File
-        self.model_path = self.cfg[MODEL_PATH]
-        self.classes = load_txt(self.cfg[LABEL_PATH])
-        self.input_size = tuple(map(int, self.cfg[INPUT_SIZE].split(",")))
+        self.model_path = self.cfg[TRG][MODEL_PATH]
+        self.classes = load_txt(self.cfg[TRG][LABEL_PATH])
+        self.input_size = tuple(map(int, self.cfg[TRG][INPUT_SIZE].split(",")))
 
         # Initialize XModel
         time_init_start = time.time()

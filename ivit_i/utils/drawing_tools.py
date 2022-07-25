@@ -46,8 +46,8 @@ class Draw:
             if det:
                 class_id = det['id']
                 class_name = det['label']
-                class_score = det['score'] if det['score']!=None else "None"
-                content = '{} {:.1%}'.format(class_name, class_score)
+                class_score = det['score']
+                content = '{}'.format(class_name)
                 # --------------------------------------------------------
                 (t_width, t_height) = get_text_size(content)
                 xmin = max(int(det['xmin']), 0) if det['xmin'] else 0+PADDING
@@ -197,11 +197,16 @@ def get_palette( conf:dict) -> list:
     
     # get labels
     if not ('label_path' in conf.keys()):
-        msg = "Error configuration file, can't find `label_path`"
-        logging.error(msg)
-        raise Exception(msg)
+        fw = conf["framework"]
+        if not ('label_path' in conf[fw].keys()):
+            msg = "Error configuration file, can't find `label_path`"
+            logging.error(msg)
+            raise Exception(msg)
+        else:
+            label_path = conf[fw]['label_path']    
+    else:
+        label_path = conf['label_path']
 
-    label_path = conf['label_path']
     color_map_ext ='.txt'
 
     if conf['tag'] == 'pose':

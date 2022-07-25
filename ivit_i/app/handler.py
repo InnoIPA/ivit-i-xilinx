@@ -1,7 +1,7 @@
 
 import logging, os
 APP_KEY = "application"
-FRAMEWORK = "tensorrt"
+FRAMEWORK = "vitis-ai"
 
 def get_app_list():
     dir_path = os.path.dirname(__file__)    
