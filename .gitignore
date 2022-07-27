@@ -7,11 +7,11 @@ data
 # Cache
 **/__pycache__
 **/*.pyc
+**/*_colormap.txt
 
 # Log
 **/*.log
-
-
+**/*/model
 
 
 
