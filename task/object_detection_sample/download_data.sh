@@ -5,7 +5,9 @@ printf "# Download File \n"
 # Define Parameters 
 URL="https://drive.google.com/file/d/15X2EwgdtNmLgaLOWlMyBytJ3gM1c1Wqd/view?usp=sharing"
 GID="15X2EwgdtNmLgaLOWlMyBytJ3gM1c1Wqd"
-TRG_FOLDER="/workspace/data"
+
+ROOT=`dirname ${0}`
+TRG_FOLDER="${ROOT}/../../data"
 FILE_NAME="car.mp4"
 LEN=20
 
