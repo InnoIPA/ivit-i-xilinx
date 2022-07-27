@@ -2,8 +2,8 @@
     "tag": "obj",
     "framework": "vitis-ai",
     "vitis-ai":{
-        "model_path": "task/object_detection_sample/yolov3-voc.xmodel",
-        "label_path": "task/object_detection_sample/yolov3-voc.txt",
+        "model_path": "task/object_detection_sample/model/yolov3-voc.xmodel",
+        "label_path": "task/object_detection_sample/model/yolov3-voc.txt",
         "input_size": "3,416,416",
         "anchors": [
             10,
