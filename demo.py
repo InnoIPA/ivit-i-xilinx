@@ -56,25 +56,26 @@ def main(args):
     src = Source(total_conf['source'], total_conf['source_type'])
 
     # Get Application
-    has_app=False
-    try:
-        application = get_application(total_conf)
-        has_app = False if application == None else True
-
-        # Setup parameter if needed
-        app_info = total_conf["application"]
-
-        # Area detection: point_points
-        if "area" in app_info["name"]:
-            key = "area_points"
-            if not key in app_info: 
-                application.set_area(pnts=None, frame=src.get_first_frame())
-            else: 
-                application.set_area(pnts=app_info[key])   
-
-    except Exception as e:
-        handle_exception(error=e, title="Could not load application ... set app to None", exit=False)
+    if not args.server:
         has_app=False
+        try:
+            application = get_application(total_conf)
+            has_app = False if application == None else True
+
+            # Setup parameter if needed
+            app_info = total_conf["application"]
+
+            # Area detection: point_points
+            if "area" in app_info["name"]:
+                key = "area_points"
+                if not key in app_info: 
+                    application.set_area(pnts=None, frame=src.get_first_frame())
+                else: 
+                    application.set_area(pnts=app_info[key])   
+
+        except Exception as e:
+            handle_exception(error=e, title="Could not load application ... set app to None", exit=False)
+            has_app=False
 
     # Main Loop
     try:
@@ -86,6 +87,10 @@ def main(args):
 
             info = trg.inference(frame)
 
+            if args.server:
+                logging.info(info)
+                continue
+            
             if not has_app:
                 info["frame"]=draw_frame
                 draw_frame = draw.draw_detections(info, palette, total_conf)
