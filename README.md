@@ -5,8 +5,7 @@ iNIT-I is an AI inference tool which could support multiple AI framework and thi
 * [Prepare Environment](#prepare-environment)
 * [Fast Testing](#fast-testing)
 * [Web API](#web-api)
-* [Sample Information](#sample-information)
-
+* [Supported List](#supported-list)
 
 #  Prepare Environment
 1. Download iVIT-I with Web API
@@ -51,5 +50,11 @@ We provide the fast-test for each sample, please check the [document](./test/REA
 </details>
 <br>
 
-# AI Model Zoo
-* iVIT-I now supported `1.4.X`, you can check the [AI Model Zoo](https://github.com/Xilinx/Vitis-AI/tree/v1.4.1/models/AI-Model-Zoo/model-list) to see more detail.
+# Supported List
+* iVIT-I support the pre-trained model which download from [AI Model Zoo](https://github.com/Xilinx/Vitis-AI/tree/v1.4.1/models/AI-Model-Zoo/model-list).
+* Tag: `1.4.X`
+
+|   Name        |   Type    |   Description 
+|   ---         |   ---     |   ---
+|   Mobile Net  |   Classification  |   https://github.com/Xilinx/Vitis-AI/blob/1.4.1/models/AI-Model-Zoo/model-list/tf2_mobilenetv1_imagenet_224_224_1.15G_1.4/model.yaml
+|   YOLOv3      |   Object Detection    |   https://github.com/Xilinx/Vitis-AI/blob/v1.4/models/AI-Model-Zoo/model-list/tf_yolov3_voc_416_416_65.63G_1.4/
