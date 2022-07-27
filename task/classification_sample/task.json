@@ -1,6 +1,6 @@
 {
     "framework": "vitis-ai",
-    "source": "data/cat.jpg",
+    "source": "data/images/dog.jpg",
     "application": {
         "name": "default"
     },
