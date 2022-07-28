@@ -3,7 +3,7 @@
 ```json
 {
     "name": "classification_sample",
-    "framework": "openvino",
+    "framework": "vitis-ai",
     "prim": {
         "model_json": "./task/classification_sample/classification.json"
     },
