@@ -5,6 +5,7 @@
         "model_path": "task/classification_sample/model/mobilenet_1_0_224_tf2.xmodel",
         "label_path": "task/classification_sample/imagenet.txt",
         "input_size": "3,224,224",
-        "device": "DPU"
+        "device": "DPU",
+        "thres": null
     }
 }
