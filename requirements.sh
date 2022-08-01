@@ -2,7 +2,7 @@
 pip3 install gdown wget colorlog GPUtils
 
 # Pycocotools
-sudo dnf install python3-matplotlib
+sudo dnf install python3-matplotlib -y
 pip3 install pycocotools
 
 # for Flask
