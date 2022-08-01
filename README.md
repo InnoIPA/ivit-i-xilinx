@@ -64,11 +64,11 @@ We provide the fast-test for each sample, please check the [document](./test/REA
     <p>not figure here</p>
 </details>
 <details>
-    <summary>Web API - Entry</summary>
+    <summary>iVIT-I-DEMO ( Web API ) - Entry</summary>
     <img src="./docs/images/entry.png" width=80%>
 </details>
 <details>
-    <summary>Web API - Streaming</summary>
+    <summary>iVIT-I-DEMO ( Web API ) - Streaming</summary>
     <img src="./docs/images/stream.png" width=80%>
 </details>
 
