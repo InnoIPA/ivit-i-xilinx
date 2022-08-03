@@ -2,9 +2,10 @@
     "tag": "cls",
     "framework": "vitis-ai",
     "vitis-ai":{
-        "model_path": "task/classification_sample/model/customcnn.xmodel",
-        "label_path": "task/classification_sample/model/customcnn.txt",
-        "input_size": "3,250,200",
-        "device": "DPU"
+        "model_path": "task/classification_sample/model/mobilenet_1_0_224_tf2.xmodel",
+        "label_path": "task/classification_sample/imagenet.txt",
+        "input_size": "3,224,224",
+        "device": "DPU",
+        "thres": null
     }
 }

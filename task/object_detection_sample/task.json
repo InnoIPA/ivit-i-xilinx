@@ -1,6 +1,6 @@
 {
     "framework": "vitis-ai",
-    "source": "data/cat.jpg",
+    "source": "data/car.mp4",
     "application": {
         "name": "default"
     },
@@ -8,5 +8,5 @@
         "model_json": "./task/object_detection_sample/yolov3.json"
     },
     "name": "object_detection_sample",
-    "source_type": "Image"
+    "source_type": "Video"
 }

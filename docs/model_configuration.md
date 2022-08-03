@@ -4,8 +4,8 @@ If you want to change your model of openvino and parameters, you should be chang
 
 ```json
 {  
-    "tag":"class",
-    "openvino":{
+    "tag":"cls",
+    "vitis-ai":{
         "model_path":"resnet_v1_50_inference.xml",
         "label_path":"iamgenet.names",
         "device":"CPU",

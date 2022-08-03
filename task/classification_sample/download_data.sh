@@ -5,7 +5,9 @@ printf "# Download File \n"
 # Define Parameters 
 URL="https://drive.google.com/file/d/1hq2CvCT4SRTvvkHo3QVZSh85bdUuiXbR/view?usp=sharing"
 GID="1hq2CvCT4SRTvvkHo3QVZSh85bdUuiXbR"
-TRG_FOLDER="/workspace/data"
+
+ROOT=`dirname ${0}`
+TRG_FOLDER="${ROOT}/../../data"
 FILE_NAME="cat.jpg"
 LEN=20
 
