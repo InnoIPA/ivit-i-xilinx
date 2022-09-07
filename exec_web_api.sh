@@ -32,7 +32,8 @@ fi
 
 # get ip address
 ip=$(python3 -c "from ivit_i.web.tools.common import get_address;print(get_address())")
-echo "HOST: ${ip}" | boxes -s 80x5 -a c
+# echo "HOST: ${ip}" | boxes -s 80x5 -a c
+echo -ne "\n\nHOST: ${ip}\n\n"
 
 gunicorn --worker-class eventlet \
 -w ${WORKER} \

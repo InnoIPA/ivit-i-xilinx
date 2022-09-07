@@ -27,8 +27,6 @@ CV_WIN  =   "Test"
 
 def main(args):
     
-    config_logger(log_name='ivit-i-xilinx.log', write_mode='w', level='debug')
-
     app_conf = load_json(args.config)                       # load the configuration of the application
     model_conf = load_json(app_conf['prim']['model_json'])             # load the configuration of the AI model
     
