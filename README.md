@@ -33,15 +33,17 @@ We use `task.json` to configure each AI tasks and using `<model>.json` to config
     ``` bash
     python3 demo.py --config task/classification_sample/task.json
     ```
-    <details>
-        <summary>None-interactive Demo</summary>
-        <code> python3 demo.py --config task/classification_sample/task.json -s </code>
+    * None-interactive Demo
+        
+        ```
+        python3 demo.py --config task/classification_sample/task.json -s
+        ```
         <img src="./docs/images/cli-demo.png" width=80%>
-    </details>
+    
     <br>
 3. Run Web Service
     ```bash
-    ./exec_web_api.sh
+    sudo ./exec_web_api.sh
     ```
 
 # Fast Testing
