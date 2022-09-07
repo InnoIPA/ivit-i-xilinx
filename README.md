@@ -41,7 +41,7 @@ We use `task.json` to configure each AI tasks and using `<model>.json` to config
     <br>
 3. Run Web Service
     ```bash
-    ./exec_web_api.sh
+    sudo ./exec_web_api.sh
     ```
 
 # Fast Testing
