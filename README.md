@@ -1,17 +1,18 @@
+![LOGO](docs/images/iVIT-I-Logo-B.png)
+
 # iVIT-I-Xilinx
 iNIT-I is an AI inference tool which could support multiple AI framework and this repository is just for xilin platform.
 
-* [Run Sample](#run-sample)
 * [Prepare Environment](#prepare-environment)
+* [Run Sample](#run-sample)
 * [Fast Testing](#fast-testing)
 * [Web API](#web-api)
-* [DEMO](#demo)
 * [Supported Model](#supported-model)
 
 #  Prepare Environment
 1. Download iVIT-I with Web API
     ```bash
-    git clone --recurse-submodules https://github.com/InnoIPA/ivit-i-xilinx.git && cd ivit-i-xilinx
+    git clone https://github.com/InnoIPA/ivit-i-xilinx.git && cd ivit-i-xilinx
     ```
 2. Install requirement
     ```bash
@@ -31,12 +32,12 @@ We use `task.json` to configure each AI tasks and using `<model>.json` to config
     ```
 2. Run demo script.
     ``` bash
-    python3 demo.py --config task/classification_sample/task.json
+    python3 demo.py -c task/classification_sample/task.json
     ```
     * None-interactive Demo
         
         ```
-        python3 demo.py --config task/classification_sample/task.json -s
+        python3 demo.py -c task/classification_sample/task.json -s
         ```
         <img src="./docs/images/cli-demo.png" width=80%>
     
@@ -58,25 +59,6 @@ We provide the fast-test for each sample, please check the [document](./test/REA
     <img src="docs/images/apidocs.png" width=80%>
 </details>
 <br>
-
-# DEMO
-
-<details>
-    <summary>Demo</summary>
-    <p>not figure here</p>
-</details>
-<details>
-    <summary>iVIT-I-DEMO ( Web API ) - Entry</summary>
-    <img src="./docs/images/entry.png" width=80%>
-</details>
-<details>
-    <summary>iVIT-I-DEMO ( Web API ) - Streaming</summary>
-    <img src="./docs/images/stream.png" width=80%>
-</details>
-
-<br>
-    
-
 
 # Supported Model
 * iVIT-I support the pre-trained model which download from [AI Model Zoo](https://github.com/Xilinx/Vitis-AI/tree/v1.4.1/models/AI-Model-Zoo/model-list).
