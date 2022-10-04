@@ -6,6 +6,7 @@
         "label_path": "task/classification_sample/imagenet.txt",
         "input_size": "3,224,224",
         "device": "DPU",
-        "thres": null
+        "thres": null,
+        "preprocess": "mobilenet"
     }
 }

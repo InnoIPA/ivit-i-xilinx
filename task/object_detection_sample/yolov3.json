@@ -29,6 +29,7 @@
         "nms": "0.45",
         "thres": "0.2",
         "box_max_num": "30",
-        "device": "DPU"
+        "device": "DPU",
+        "preprocess": "yolo"
     }
 }

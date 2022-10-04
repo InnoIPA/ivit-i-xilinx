@@ -7,19 +7,23 @@ from .common import frame2btye, get_src, stop_src, socketio, app
 
 from ..tools.handler import get_tasks
 from ..tools.parser import get_pure_jsonify
-from ..tools.common import handle_exception
-from ..ai.pipeline import Source
 from ..ai.get_api import get_api
+
+from ivit_i.common.pipeline import Source
+from ivit_i.utils import handle_exception
 
 # Get Application Module From iVIT-I
 sys.path.append("/workspace")
 from ivit_i.app.handler import get_application
+from flasgger import swag_from
+
 
 # Define API Docs yaml
 YAML_PATH   = ""
 BP_NAME     = "stream"
 DIV         = "-" * 20
-bp_stream = Blueprint(BP_NAME, __name__)
+YAML_PATH   = "/workspace/ivit_i/web/docs/stream"
+bp_stream   = Blueprint(BP_NAME, __name__)
 
 # Define Status
 RUN         = "run"
@@ -219,6 +223,7 @@ def stream_task(task_uuid, src, namespace, infer_function):
         return jsonify(err), 400
 
 @bp_stream.route("/update_src/", methods=["POST"])
+@swag_from("{}/{}".format(YAML_PATH, "update_src.yml"))
 def update_src():
     """ Get the first frame when upload a new file """
 
@@ -233,17 +238,18 @@ def update_src():
         file_path = os.path.join(app.config["DATA"], file_name)
         file.save( file_path )
         # Update data information
-        data["source"]=file_path
+        data[SOURCE]=file_path
 
     src = Source(
-        input_data = data["source"], 
-        intype=data["source_type"]
+        input_data = data[SOURCE], 
+        intype=data[SOURCE_TYPE]
     )
     ret = frame2btye(src.get_first_frame())
 
     return jsonify( ret )
 
 @bp_stream.route("/task/<uuid>/get_frame")
+@swag_from("{}/{}".format(YAML_PATH, "get_frame.yml"))
 def get_first_frame(uuid):
     """ Get target task first frame via web api """
     src = get_src(uuid)
@@ -252,6 +258,7 @@ def get_first_frame(uuid):
     return jsonify( ret )
     
 @bp_stream.route("/task/<uuid>/stream/start/", methods=["GET"])
+@swag_from("{}/{}".format(YAML_PATH, "stream_start.yml"))
 def start_stream(uuid):      
 
     [ logging.info(cnt) for cnt in [DIV, f'Start stream ... destination of socketio event: "/task/{uuid}/stream"', DIV] ]
@@ -280,6 +287,7 @@ def start_stream(uuid):
         return jsonify(handle_exception(e, "Stream Start Error")), FAIL_CODE
 
 @bp_stream.route("/task/<uuid>/stream/stop/", methods=["GET"])
+@swag_from("{}/{}".format(YAML_PATH, "stream_stop.yml"))
 def stop_stream(uuid):
     
     if app.config[TASK][uuid][STATUS]!=ERROR:
