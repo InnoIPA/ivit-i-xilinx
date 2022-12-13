@@ -1,0 +1,43 @@
+{
+    "framework": "vitis-ai",
+    "category": "sample",
+    "source": "data/4-corner-downtown.mp4",
+    "application": {
+        "name": "tracking",
+        "depend_on": [
+            "car"
+        ],
+        "area_points": {
+            "0": [
+                [
+                    430,
+                    660
+                ],
+                [
+                    1217,
+                    594
+                ],
+                [
+                    1585,
+                    778
+                ],
+                [
+                    623,
+                    896
+                ],
+                [
+                    538,
+                    868
+                ]
+            ]
+        },
+        "area_vector": {
+            "0": []
+        }
+    },
+    "prim": {
+        "model_json": "./task/traffic-flow-detect/yolov3.json"
+    },
+    "name": "traffic-flow-detect",
+    "source_type": "Video"
+}

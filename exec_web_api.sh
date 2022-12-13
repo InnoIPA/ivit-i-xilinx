@@ -3,7 +3,7 @@
 # Install pre-requirement
 if [[ -z $(which jq) ]];then
     echo "Installing requirements .... "
-    sudo apt-get install jq -yqq
+    sudo dnf install jq -yqq
 fi
 
 # Variable
@@ -35,8 +35,17 @@ ip=$(python3 -c "from ivit_i.web.tools.common import get_address;print(get_addre
 # echo "HOST: ${ip}" | boxes -s 80x5 -a c
 echo -ne "\n\nHOST: ${ip}\n\n"
 
-gunicorn --worker-class eventlet \
+
+# ---------------------------------------------------------------------------------------
+
+# Run Micro Service
+./env/stream-server.sh start
+
+# Run Web API
+gunicorn \
 -w ${WORKER} \
 --threads ${THREADING} \
 --bind 0.0.0.0:${PORT} \
 ivit_i.web.app:app
+
+./env/stream-server.sh stop
