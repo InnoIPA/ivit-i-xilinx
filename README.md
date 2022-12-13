@@ -20,12 +20,13 @@ iNIT-I is an AI inference tool which could support multiple AI framework and thi
 # Prepare Environment
 1. Download iVIT-I with Web API
     ```bash
-    git clone --recurse-submodules https://github.com/InnoIPA/ivit-i-xilinx.git && cd ivit-i-xilinx
+    git clone https://github.com/InnoIPA/ivit-i-xilinx.git
+    cd ivit-i-xilinx
     ```
 2. Install requirement
     ```bash
     sudo -s
-    chmod +x ./requirements.sh ./requirements.sh
+    chmod +x ./requirements.sh && ./requirements.sh
     ```
 3. Prepare AI Module
     ```bash
