@@ -26,7 +26,7 @@ iNIT-I is an AI inference tool which could support multiple AI framework and thi
 2. Install requirement
     ```bash
     sudo -s
-    chmod +x ./requirements.sh && ./requirements.sh
+    chmod +x ./env/requirements.sh && ./env/requirements.sh
     ```
 3. Prepare AI Module
     ```bash
