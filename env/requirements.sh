@@ -30,8 +30,3 @@ pip3 install --no-cache-dir \
     python-socketio==5.6.0 \
     flask_mqtt==1.1.1 \
     paho-mqtt==1.6.1
-
-# Setup iVIT Permission
-export IVIT_DEBUG=True 
-echo 'export IVIT_DEBUG=True' >> ~/.bashrc
-echo "Pass iVIT Verify"
