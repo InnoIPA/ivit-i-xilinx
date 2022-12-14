@@ -69,16 +69,15 @@ def main_loop(cap, writer, expect_fps):
         t_write = time.time()
         writer.write(frame)
         
-        # print(f"\rID: {count}, FPS: {fps:<5}, WRTIE RTSP: {round((time.time()-t_write),3):<5}", end='')
+        print(f"\rID: {count}, FPS: {fps:<5}, WRTIE RTSP: {round((time.time()-t_write),3):<5}", end='')
 
-        # if(1/expect_fps-(time.time()-start_time))>0:
-        #     time.sleep(abs(1/expect_fps-(time.time()-start_time)))
-        # else:              
-        #     continue
+        if(1/expect_fps-(time.time()-start_time))>0:
+            time.sleep(abs(1/expect_fps-(time.time()-start_time)))
+        else:              
+            continue
 
         t_cur = time.time() - start_time
         fps = int(1/t_cur)
-        print(fps)
 
 print(
     """\n Press Ctrl+C to exit !!! \n"""
@@ -86,10 +85,10 @@ print(
 
 # cap = cv2.VideoCapture('/dev/video0')
 
-INTPUT = './data/car.h264'
+INTPUT = './data/car.mp4'
 FPS = 30
 
-cap = CamThread(input=INTPUT, fps=60)
+cap = CamThread(input=INTPUT, fps=30)
 
 ret, frame = cap.read()
 (src_hei, src_wid), src_fps = frame.shape[:2], FPS
@@ -97,7 +96,7 @@ ret, frame = cap.read()
 gst_pipeline = \
     'videomixer name=mix sink_0::xpos=0 sink_0::ypos=0 ' + \
     '! omxh264enc prefetch-buffer=true ' + \
-    'control-rate=2 target-bitrate=3000 ' + \
+    'control-rate=2 target-bitrate=1000 ' + \
     'filler-data=false constrained-intra-prediction=true ' + \
     'periodicity-idr=120 gop-mode=low-delay-p aspect-ratio=3 ' + \
     'low-bandwidth=true default-roi-quality=4 ' + \
@@ -126,4 +125,5 @@ except Exception as e:
 
 finally:
     print('\nQuit')
+    writer.release()
     cap.release()
