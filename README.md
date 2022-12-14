@@ -83,7 +83,9 @@ We use `task.json` to configure each AI tasks and using `<model>.json` to config
 # Run Web Service
 * Run Web API
     ```bash
-    sudo ./exec_web_api.sh
+    sudo -s
+    export IVIT_DEBUG=True
+    ./exec_web_api.sh
     ```
 
 # Stop micro-service
