@@ -9,6 +9,7 @@
     "LOGGER": "ivit-i-web.log",
     "TASK_ROOT": "./task",
     "TEMP_PATH": "./temp",
+    "MODEL_DIR": "./model",
     "DATA": "data",
     "DEBUG": false,
     "WORKER": 1,
