@@ -3,10 +3,10 @@ printf "\n"
 printf "# Download File \n"
 
 # Define Parameters 
-URL="https://drive.google.com/file/d/1c8Yz2hU-6x7DuefzJP44Q0rHiw1yM8vz/view?usp=sharing"
-GID="1c8Yz2hU-6x7DuefzJP44Q0rHiw1yM8vz"
+URL="https://drive.google.com/file/d/16xK3KBJdWKZWxjzTH-_VMxpYfasEFDtz/view?usp=share_link"
+GID="16xK3KBJdWKZWxjzTH-_VMxpYfasEFDtz"
 TRG_FOLDER="./data"
-FILE_NAME="4-corner-downtown.mp4"
+FILE_NAME="4-corner-downtown-trim-1280x720.mp4"
 LEN=20
 
 # Combine Parameter

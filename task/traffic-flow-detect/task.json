@@ -1,7 +1,7 @@
 {
     "framework": "vitis-ai",
     "category": "sample",
-    "source": "data/4-corner-downtown.mp4",
+    "source": "data/4-corner-downtown-trim-1280x720.mp4",
     "application": {
         "name": "tracking",
         "depend_on": [
@@ -10,29 +10,30 @@
         "area_points": {
             "0": [
                 [
-                    430,
-                    660
+                    301,
+                    438
                 ],
                 [
-                    1217,
-                    594
+                    804,
+                    392
                 ],
                 [
-                    1585,
-                    778
+                    1039,
+                    512
                 ],
                 [
-                    623,
-                    896
+                    402,
+                    592
                 ],
                 [
-                    538,
-                    868
+                    358,
+                    572
                 ]
             ]
         },
         "area_vector": {
-            "0": []
+            "0": [],
+            "1": []
         }
     },
     "prim": {
