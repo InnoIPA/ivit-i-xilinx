@@ -1,12 +1,25 @@
 #!/bin/bash
 
-# Install Tensorflow
-sudo python3 -m pip install --upgrade pip
-sudo python3 -m pip install scikit-build cmake mock cython
-wget https://github.com/p513817/tf-2.4.1-no-h5py/releases/download/2.4.1/tensorflow-2.4.1-cp37-cp37m-linux_aarch64-no-h5py.whl
-mv *.whl tensorflow-2.4.1-cp37-cp37m-linux_aarch64.whl
-sudo pip3 install tensorflow-2.4.1-cp37-cp37m-linux_aarch64.whl
-rm tensorflow-2.4.1-cp37-cp37m-linux_aarch64.whl
+function install_tf(){
+    # Install Tensorflow
+    sudo python3 -m pip install --upgrade pip
+    sudo python3 -m pip install scikit-build cmake mock cython
+    wget https://github.com/p513817/tf-2.4.1-no-h5py/releases/download/2.4.1/tensorflow-2.4.1-cp37-cp37m-linux_aarch64-no-h5py.whl
+    mv *.whl tensorflow-2.4.1-cp37-cp37m-linux_aarch64.whl
+    sudo pip3 install tensorflow-2.4.1-cp37-cp37m-linux_aarch64.whl
+    rm tensorflow-2.4.1-cp37-cp37m-linux_aarch64.whl
+}
+
+# Check Tensorflow
+RET=$(pip3 list | grep tensorflow)
+if [[ -z ${RET} ]]; then
+    install_tf;
+else
+
+    TF_VER=$(python3 -c "import tensorflow as tf; print(tf.__version__)")
+    
+
+fi
 
 # Python Module
 pip3 install --no-cache-dir \
