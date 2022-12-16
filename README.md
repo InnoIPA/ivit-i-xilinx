@@ -28,14 +28,12 @@ iNIT-I is an AI inference tool which could support multiple AI framework and thi
     sudo -s
     chmod +x ./env/requirements.sh && ./env/requirements.sh
     ```
-3. Prepare AI Module
+3. Prepare iVIT-I
     ```bash
-    # Load AI App for Vitis-AI, load-xilinx-app.sh < App Name >
-    ./env/load-xilinx-app.sh VCU200EDDPU200B4096
-    ```
-4. Ignore IVIT verify
-    ```bash
-    export IVIT_DEBUG=True
+    # Switch to super user
+    sudo -s
+    # Initailize IVIT
+    source ./env/start-ivit.sh
     ```
 
 # Run Sample
@@ -84,7 +82,7 @@ We use `task.json` to configure each AI tasks and using `<model>.json` to config
 * Run Web API
     ```bash
     sudo -s
-    export IVIT_DEBUG=True
+    source ./env/start-ivit.sh
     ./exec_web_api.sh
     ```
 
@@ -113,3 +111,8 @@ We provide the fast-test for each sample, please check the [document](./test/REA
 |   ---         |   ---     |   ---
 |   Mobile Net  |   Classification  |   https://github.com/Xilinx/Vitis-AI/blob/1.4.1/models/AI-Model-Zoo/model-list/tf2_mobilenetv1_imagenet_224_224_1.15G_1.4/model.yaml
 |   YOLOv3      |   Object Detection    |   https://github.com/Xilinx/Vitis-AI/blob/v1.4/models/AI-Model-Zoo/model-list/tf_yolov3_voc_416_416_65.63G_1.4/
+
+# Credit
+* Using [aler9/rtsp-simple-server](https://github.com/aler9/rtsp-simple-server) to handle RTSP stream.
+* Convert to WebRTC by using [deepch/RTSPtoWeb](https://github.com/deepch/RTSPtoWeb).
+* Convert TensorRT egnine from darknet referring from [jkjung-avt/tensorrt_demos](https://github.com/jkjung-avt/tensorrt_demos)
