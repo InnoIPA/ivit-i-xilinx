@@ -151,7 +151,7 @@ class SensorFactory(GstRtspServer.RTSPMediaFactory):
         
         self.launch_string = 'videomixer name=mix sink_0::xpos=0 sink_0::ypos=0 ' \
                             '! omxh264enc prefetch-buffer=true ' \
-                            'control-rate=2 target-bitrate=1000 ' \
+                            'control-rate=2 target-bitrate=3000000 ' \
                             'filler-data=false constrained-intra-prediction=true ' \
                             'periodicity-idr=120 gop-mode=low-delay-p aspect-ratio=3 ' \
                             'low-bandwidth=true default-roi-quality=4 ' \
