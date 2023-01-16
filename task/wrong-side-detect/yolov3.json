@@ -1,0 +1,35 @@
+{
+    "tag": "obj",
+    "framework": "vitis-ai",
+    "vitis-ai":{
+        "model_path": "model/yolov3_voc_tf/yolov3_voc_tf.xmodel",
+        "label_path": "model/yolov3_voc_tf/yolov3-voc.txt",
+        "input_size": "3,416,416",
+        "anchors": [
+            10,
+            13,
+            16,
+            30,
+            33,
+            23,
+            30,
+            61,
+            62,
+            45,
+            59,
+            119,
+            116,
+            90,
+            156,
+            198,
+            373,
+            326
+        ],
+        "iou": "0.213",
+        "nms": "0.45",
+        "thres": "0.8",
+        "box_max_num": "30",
+        "device": "DPU",
+        "preprocess": "yolo"
+    }
+}

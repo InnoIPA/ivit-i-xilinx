@@ -19,7 +19,7 @@ GUI     = 'gui'
 def init_cv_win():
     logging.info('Init Display Window')
     cv2.namedWindow( CV_WIN, cv2.WND_PROP_FULLSCREEN )
-    cv2.setWindowProperty( CV_WIN, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN )
+    # cv2.setWindowProperty( CV_WIN, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN )
 
 def fullscreen_toggle():
     global FULL_SCREEN
