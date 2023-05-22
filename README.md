@@ -1,4 +1,4 @@
-![LOGO](docs/images/iVIT-I-Logo-B.png)
+![LOGO](assets/images/iVIT-I-Logo-B.png)
 
 # iVIT-I-Xilinx
 iNIT-I is an AI inference tool which could support multiple AI framework and this repository is just for xilin platform.

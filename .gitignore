@@ -1,19 +1,36 @@
-# META DATA
-data
-
-# MODEL
-**/*.xmodel
-
-# Cache
-**/__pycache__
-**/*.pyc
-**/*_colormap.txt
-
-# Log
-**/*.log
+# --------------------------------------
+# Python Cache
+__pycahe__
+**/__pycahe__
+**/*/__pycahe__
+**/*/*.pyc
+# --------------------------------------
+# Model and Configuration file ( YOLO )
 **/*/model
-
-model
-temp
-
-
+**/*/*.trt
+**/*/*.plan
+**/*/*.pth
+**/*/*.onnx
+**/*/*.etlt
+**/*/*.tlt
+**/*/*.engine
+**/*/*.cfg
+**/*/*.weights
+# --------------------------------------
+# Plugins
+# **/*/*.so
+**/*/*.o
+# --------------------------------------
+# Temprate Data
+**/*/*_colormap.txt
+*.log
+**/*/*.log
+temp/*
+data/*
+model/*
+# --------------------------------------
+# Sample Tasks
+# ---------------------------------------
+!docs
+!**/.gitkeep
+tool/
