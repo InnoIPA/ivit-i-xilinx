@@ -57,5 +57,5 @@ iNIT-I is an AI inference tool which could support multiple AI framework and thi
     * [iDevice Sample](samples/ivit_device_sample/README.md)
 
 # Python Library Documentation
-[iVIT-I-Intel API Docs](https://innoipa.github.io/ivit-i-intel/)
+[iVIT-I-Xilinx API Docs](https://innoipa.github.io/ivit-i-xilinx/)
 
