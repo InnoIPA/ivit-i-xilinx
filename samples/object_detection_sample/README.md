@@ -38,26 +38,12 @@ iVIT Object Detection Sample, this sample demonstrates how to do inference of im
     ```
 
 # Usage
-* Base on YOLOv4
-    ```bash
-    cd /workspace/samples/object_detection_sample
-    ./download_yolov4-tiny.sh
-    
-    # YOLOv4 Tiny: `-at` have to be yolov4, same with yolov4 model
-    MODEL=${ROOT}/model/yolo-v4-tiny-tf/yolo-v4-tiny-tf.xml
-    LABEL=${ROOT}/model/yolo-v4-tiny-tf/coco.names
-    ARCHT=yolov4
-    ```
 * Add Confidence Threshold
     ```bash
     # Define threshold
     THRES=0.9
-    ${EXEC_PY} -m ${MODEL} -l ${LABEL} -i ${INPUT} -at ${ARCHT} -t ${THRES}
+    ${EXEC_PY} -m ${MODEL} -l ${LABEL} -i ${INPUT} -at ${ARCHT} --anchors ${ANCHORS} -t ${THRES} --no_show
     ```
-    
-* Run with iGPU
-    ```bash
-    ${EXEC_PY} -m ${MODEL} -l ${LABEL} -i ${INPUT} -at ${ARCHT} -d GPU
 
 ## Format of output 
 *  The format of result after model predict like below.
