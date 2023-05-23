@@ -145,9 +145,7 @@ if [[ ${QUICK} = false ]];then waitTime 5; fi
 # Execution
 
 # Run Docker Service
-if [[ $(docker &>/dev/null) -eq 1 ]];then
-	sudo dockerd & > ./docker.log
-fi
+sudo dockerd & > ./docker.log
 
 # Rund Docker Compose
 printd "Launch Relative Container" G
