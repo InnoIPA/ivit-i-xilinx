@@ -20,7 +20,7 @@ iVIT-I iDEVICE Sample, this sample demonstrates how to do use iDEVICE to monitor
         {   #CPU information.
             'DPU':{
                 'id': 0,                # the idex wget from device. 
-                'uuid': 'DPU',          # the name get from device. 
+                'uid': 'DPU',          # the name get from device. 
                 'load': 0,              # loading capacity get from device. 
                 'memoryUtil': 0,        # amount of memory usage get from device. 
                 'temperature': 30       # temperature get from device
