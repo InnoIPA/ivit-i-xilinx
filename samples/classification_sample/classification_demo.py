@@ -91,13 +91,13 @@ def print_results(  detections:List[Tuple[int, str, float]],
             sub_title = ' Class ID | {:^{width}s}| Confidence '.format('Label', width=label_max_len)
 
     # Print Information
-    log.info(title)
-    log.info(sub_title)
+    print(title)
+    print(sub_title)
     for label_idx, label_name, label_score in detections:
         if label_name != "":
-            log.info('{:^9} | {:^{width}s}| {:^10f}'.format(label_idx, label_name, label_score, width=label_max_len))
+            print('{:^9} | {:^{width}s}| {:^10f}'.format(label_idx, label_name, label_score, width=label_max_len))
         else:
-            log.info('{:^9} | {:^10f}'.format(label_idx, label_score))
+            print('{:^9} | {:^10f}'.format(label_idx, label_score))
     
 
 def draw_results(   frame:ndarray, 
