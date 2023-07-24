@@ -14,7 +14,7 @@ source "${ROOT}/utils.sh"
 # ========================================================
 # Basic Parameters
 CONF="ivit-i.json"
-DOCKER_USER="maxchanginnodisk"
+DOCKER_USER="innodiskorg"
 DOCKER_COMPOSE="./docker/docker-compose.yml"
 
 # ========================================================
